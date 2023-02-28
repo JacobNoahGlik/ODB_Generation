@@ -1,0 +1,13 @@
+NewTable='Concert',
+Attributes=[ 
+    cID INTEGER -p,
+    name CHAR(25),
+    mssn Musician.ssn, 
+    pid Place.aid,
+];
+NewTable='Attendee',
+Attributes=[
+    ssn CHAR(9) -p,
+    name CHAR(25),
+    Concert.cID
+];

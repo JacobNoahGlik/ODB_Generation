@@ -1,0 +1,41 @@
+NewTable='Musicians',
+Attributes=[
+    ssn CHAR(9) -p,
+    name CHAR(30),
+    annualIncome REAL
+];
+
+NewTable='Instruments',
+Attributes=[
+    instrID CHAR(10) -p,
+    iname CHAR(30),
+    musickey CHAR(10)
+];
+
+NewTable='Plays',
+Attributes=[
+    Musicians.ssn -p,
+    Instruments.instrID -p
+];
+
+NewTable='SongsAppears',
+Attributes=[
+    songID CHAR(10) -p,
+    authorSSN Musicians.ssn,
+    title CHAR(40),
+    albumIdentifier CHAR(40)
+];
+
+NewTable='Place',
+Attributes=[
+    aid CHAR(10) -p,
+    address CHAR(40),
+    otherInfo CHAR(40),
+];
+
+NewTable='Lives',
+Attributes=[
+    Musicians.ssn -p,
+    Place.aid -p,
+    phone CHAR(10),
+];
